@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MyMusicPlayer</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Metal Bands</string>
+    <string name="hello">Greetings</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="metal_bands">
+        <item>Death</item>
+        <item>Slayer</item>
+        <item>Behemoth</item>
+        <item>Immortal</item>
+        <item>Emperor</item>
+        <item>Morbid Angel</item>
+    </string-array>
+
+    <string name="title_activity_my_dialog">Metal Bands</string>
 
 </resources>
