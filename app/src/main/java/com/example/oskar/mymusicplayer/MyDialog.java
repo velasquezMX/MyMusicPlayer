@@ -2,6 +2,7 @@ package com.example.oskar.mymusicplayer;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,10 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import com.example.oskar.mymusicplayer.BandNames;
 
 public class MyDialog extends Activity {
-
+    MediaPlayer mPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,11 +25,16 @@ public class MyDialog extends Activity {
             ImageView bandImage = (ImageView) findViewById(R.id.bandImage);
             bandImage.setImageResource(imageId);
             TextView band = (TextView) findViewById(R.id.bandText);
-            band.setText("This logo belongs to " +bandName );
+            band.setText("This logo belongs to " + bandName );
+            BandNames bandNames = new BandNames();
+            int songId = bandNames.bandNamesDictionary.get(bandName);
+            mPlayer = MediaPlayer.create(MyDialog.this, songId);
+            mPlayer.start();
         }
     }
 
     public void closeDialog(View v){
+        mPlayer.stop();
         finish();
     }
 

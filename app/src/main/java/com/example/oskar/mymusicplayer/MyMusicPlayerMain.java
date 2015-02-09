@@ -16,6 +16,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.AdapterView.OnItemClickListener;
+import com.example.oskar.mymusicplayer.BandNames;
 
 import java.util.ArrayList;
 
@@ -82,6 +83,7 @@ public class MyMusicPlayerMain extends Activity{
             bandsArrayList = new ArrayList<Bands>();
             Resources res = context.getResources(); //gets the string array
             String[] temp = res.getStringArray(R.array.metal_bands);
+
             int[] bandImages = {R.drawable.death120,R.drawable.slayer,R.drawable.behemoth,R.drawable.immortal,R.drawable.emperor,
                     R.drawable.morbidangel};
             for(int i = 0; i <= 5; i++){
